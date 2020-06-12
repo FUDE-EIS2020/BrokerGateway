@@ -1,4 +1,4 @@
-package icyfrog.demo.routes;
+/*package icyfrog.demo.routes;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.mvc.ProxyExchange;
@@ -17,12 +17,12 @@ public class DemoRouter {
     @Value("${remote: https://www.bilibili.com/}")
     private URI bilibili;
 
-    @Value("${remote: http://localhost:8089/test/redisGet}")
-    private URI home;
+    @Value("${remote: http://localhost:8089/test/getAllProducts}")
+    private URI getAllProduct;
 
-    @GetMapping("/baidu")
-    public ResponseEntity<?> proxy1(ProxyExchange<Object> proxy, @RequestParam("key1") String key1, @RequestParam("key2") String key2) throws Exception {
-        return proxy.uri(home.toString()).get();
+    @GetMapping("/getAllProducts")
+    public ResponseEntity<?> proxy1(ProxyExchange<Object> proxy) throws Exception {
+        return proxy.uri(getAllProduct.toString()).get();
     }
 
     @GetMapping("/bilibili")
@@ -31,3 +31,6 @@ public class DemoRouter {
     }
 }
 
+
+
+ */
