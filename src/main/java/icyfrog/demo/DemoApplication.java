@@ -36,6 +36,15 @@ public class DemoApplication {
                         .path("/test/redisSet")
                         //.filters(f -> f.addRequestHeader("Router","WordLadder-Gateway"))
                         .uri( httpUri +"/test/redisSet"))
+                .route(p -> p
+                        .path("/createOrder")
+                        .uri( httpUri + "/createOrder"))
+                .route(p -> p
+                        .path("/traderOrderHistory")
+                        .uri( httpUri + "/traderOrderHistory"))
+                .route(p -> p
+                        .path("/brokerOrderHistory")
+                        .uri( httpUri + "/brokerOrderHistory"))
                 .build();
     }
 
@@ -45,7 +54,7 @@ public class DemoApplication {
 class UriConfiguration {
 
     // TODO: 后端地址有变的时候更改这里就可以
-    private String httpbin = "http://192.168.254.148:8089";
+    private String httpbin = "http://localhost:8089";
 
     public String getHttpbin() {
         return httpbin;
